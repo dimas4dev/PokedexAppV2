@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unit tests Button It should display the component correctly <Button /> 1`] = `
+<button
+  className="Button"
+  onClick={[Function]}
+>
+  ADD
+</button>
+`;
