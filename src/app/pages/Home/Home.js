@@ -20,15 +20,17 @@ export default function Home() {
   return (
     <>
       <Header />
-      <section className="container">
-        {pokemons.map(
-          (
-            pokeCard,
-            index //Comentario bonito
-          ) => (
+      <section className="home">
+        <h1 className="home-heading">Pick your Pokemon</h1>
+        <div className="home-container">
+          {pokemons.map((pokeCard, index) => (
             <Card {...pokeCard} key={index} />
-          )
-        )}
+          ))}
+        </div>
+        <div className="home-pagination">
+          <button className="home-btn">Previous</button>
+          <button className="home-btn">Next</button>
+        </div>
       </section>
       <Footer />
     </>

@@ -1,3 +1,13 @@
 .Button {
   cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  &:hover {
+    background-color: #000;
+    border: 0.15rem solid #fff;
+    color: #fff;
+    font-weight: bold;
+  }
 }
