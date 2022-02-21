@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Card from "../../components/Card/Card";
 
 import { useSelector } from "react-redux";
+import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
   // const [pokemons, setPokemons] = useState([]);
@@ -25,6 +26,7 @@ export default function Home() {
           <Card {...pokemon} key={index} />
         ))}
       </section>
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import Card from "../../components/Card/Card";
+import Footer from "../../components/Footer/Footer";
 
 import { getPokemons } from "../../services/getPokemons";
 
@@ -20,10 +21,16 @@ export default function Home() {
     <>
       <Header />
       <section className="container">
-        {pokemons.map((pokeCard, index) => (
-          <Card {...pokeCard} key={index} />
-        ))}
+        {pokemons.map(
+          (
+            pokeCard,
+            index //Comentario bonito
+          ) => (
+            <Card {...pokeCard} key={index} />
+          )
+        )}
       </section>
+      <Footer />
     </>
   );
 }

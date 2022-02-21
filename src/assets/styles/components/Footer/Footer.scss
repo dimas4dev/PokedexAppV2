@@ -1,0 +1,21 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 12px 0;
+  background-color: #ffd745;
+  position: absolute;
+  bottom: 0;
+
+  &-paragraph--description {
+    margin: 4px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  &-paragraph--description--date {
+    margin: 4px;
+    font-weight: 700;
+  }
+}
