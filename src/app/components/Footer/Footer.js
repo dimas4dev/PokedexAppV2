@@ -22,7 +22,7 @@ const Footer = () => {
   return (
     <>
       <footer className="footer">
-        <img src={PokemonsLogo} alt="logo" />
+        <img className="footer-img" src={PokemonsLogo} alt="logo" />
         <p className="footer-paragraph--description">
           The pokedex at your fingertips
         </p>
