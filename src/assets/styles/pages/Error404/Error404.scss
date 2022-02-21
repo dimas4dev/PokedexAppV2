@@ -1,0 +1,52 @@
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  font-family: "Blinker", sans-serif;
+  line-height: 1.2;
+  @media (min-width: 768px) {
+    min-height: 79vh;
+  }
+  @media (min-width: 1024px) {
+    min-height: 75vh;
+  }
+  &-container {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 1024px) {
+      width: 80%;
+    }
+  }
+  &-image {
+    width: 25rem;
+    height: auto;
+    @media (min-width: 768px) {
+      width: 40rem;
+    }
+    @media (min-width: 1024px) {
+      width: 60rem;
+    }
+  }
+  &-info {
+    text-align: center;
+  }
+  &-heading {
+    font-size: 4rem;
+    @media (min-width: 768px) {
+      font-size: 6rem;
+    }
+  }
+  &-warning {
+    font-size: 1.8rem;
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+}
