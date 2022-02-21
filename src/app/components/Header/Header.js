@@ -1,28 +1,46 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 import PLogo from "../../../assets/images/PokemonLogo.png";
 
 const Header = () => {
+  const [click, setclick] = useState(false);
+  const handleClick = () => setclick(!click);
+
   return (
     <header className="Header">
       <div className="Header-Container">
         <div className="Header-Logo">
-          <Link to="/">
+          <Link exact to="/">
             <img src={PLogo} alt="Logo Pokemon" />
           </Link>
         </div>
-        <ul className="Header-Menu">
+        <ul className={click ? "Header-Menu active" : "Header-Menu"}>
           <li className="Header-Item">
-            <Link to={"/"} className="Header-Links">
+            <NavLink
+              exact
+              to={"/"}
+              activeClassName="active"
+              className="Header-Links"
+              onClick={handleClick}
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li className="Header-Item">
-            <Link to={"/store"} className="Header-Links">
+            <NavLink
+              exact
+              to={"/store"}
+              activeClassName="active"
+              className="Header-Links"
+              onClick={handleClick}
+            >
               Store
-            </Link>
+            </NavLink>
           </li>
         </ul>
+        <div className="Header-Icon" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
+        </div>
       </div>
     </header>
   );

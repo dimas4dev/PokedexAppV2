@@ -4,8 +4,6 @@
   justify-content: center;
   align-items: center;
   font-size: 1.4rem;
-  position: sticky;
-  top: 0;
   z-index: 20;
   &-Container {
     display: flex;
@@ -27,29 +25,57 @@
     display: flex;
     list-style: none;
     text-align: center;
-    gap: 4rem;
+    padding: 0;
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 6rem;
+      right: -110%;
+      opacity: 1;
+    }
+    @media (min-width: 768px) {
+      gap: 4rem;
+    }
   }
   &-Item {
-    line-height: 4rem;
-    &:after {
-      content: "";
-      display: block;
-      height: 0.3rem;
-      width: 0;
-      background: transparent;
-      transition: width 0.3s ease, background-color 0.3s ease;
-    }
-    &:hover:after {
-      width: 100%;
+    line-height: 7rem;
+    background-color: #e6c13e;
+    &:hover {
       background-color: #bfa134;
     }
-    .active {
+    @media (min-width: 768px) {
+      background-color: transparent;
+      &:hover {
+        background-color: transparent;
+      }
     }
   }
   &-Links {
     color: #000;
     text-decoration: none;
+    font-family: "Blinker", sans-serif;
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    &:hover {
+      color: #fff;
+    }
+  }
+  &-Icon {
+    display: block;
+    font-size: 3rem;
+    cursor: pointer;
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+.active {
+  @media (max-width: 768px) {
+    opacity: 1;
+    right: 0%;
+    transition: all 0.3s ease;
+    z-index: 1;
   }
 }
