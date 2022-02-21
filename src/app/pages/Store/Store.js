@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Header from "../../components/Header/Header";
 import Card from "../../components/Card/Card";
-
-import { useSelector } from "react-redux";
 import Footer from "../../components/Footer/Footer";
 
 export default function Home() {

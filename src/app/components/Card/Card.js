@@ -2,19 +2,17 @@ import React from "react";
 import Button from "../Button/Button";
 // import PropTypes from "prop-types";
 import _ from "lodash";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import { addPokemons, removePokemons } from "../../redux/actions";
 
 // Card.propTypes = { id: PropTypes.number, name: PropTypes.string };
 
-const mapStateToProps = (state) => {
-  return {
-    pokemons: state.addOrRemovePokeFavs.pokemons,
-  };
-};
+const Card = ({ id, name }) => {
+  const pokemonsReduxState = useSelector(
+    (state) => state.addOrRemovePokeFavs.pokemons
+  );
 
-const Card = ({ id, name, pokemons, addPokemons, removePokemons }) => {
-  const isSome = pokemons.some((pokemon) => pokemon.id === id);
+  const isSome = pokemonsReduxState.some((pokemon) => pokemon.id === id);
 
   return (
     <article className="card">
@@ -38,4 +36,4 @@ const Card = ({ id, name, pokemons, addPokemons, removePokemons }) => {
   );
 };
 
-export default connect(mapStateToProps, { addPokemons, removePokemons })(Card);
+export default Card;
