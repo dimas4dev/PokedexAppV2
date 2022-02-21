@@ -1,38 +1,55 @@
 .Header {
+  background-color: #ffd745;
   display: flex;
-  justify-content: space-between;
-  background-color: #adc5cf;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  &-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 170rem;
+    width: 95%;
+  }
   &-Logo {
     display: flex;
-    margin: 12px;
+    margin: 1.2rem;
     align-items: center;
-
+    flex-grow: 1;
     img {
-      width: 50px;
-      height: 50px;
-      margin: 8px;
+      width: 14rem;
     }
   }
-  &-Routes {
+  &-Menu {
     display: flex;
-    width: 300px;
-    ul {
-      display: flex;
-      width: 100%;
-      justify-content: space-evenly;
-      list-style: none;
-      padding: 0;
-      align-items: center;
-      li {
-        cursor: pointer;
-        a {
-          text-decoration: none;
-          color: black;
-        }
-        a:hover {
-          color: blue;
-        }
-      }
+    list-style: none;
+    text-align: center;
+    gap: 4rem;
+  }
+  &-Item {
+    line-height: 4rem;
+    &:after {
+      content: "";
+      display: block;
+      height: 0.3rem;
+      width: 0;
+      background: transparent;
+      transition: width 0.3s ease, background-color 0.3s ease;
     }
+    &:hover:after {
+      width: 100%;
+      background-color: #bfa134;
+    }
+    .active {
+    }
+  }
+  &-Links {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.6rem;
   }
 }
