@@ -1,38 +1,81 @@
 .Header {
-  display: flex;
-  justify-content: space-between;
   background-color: $primary_color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  z-index: 20;
+  &-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 170rem;
+    width: 95%;
+  }
   &-Logo {
     display: flex;
-    margin: 12px;
+    margin: 1.2rem;
     align-items: center;
-
+    flex-grow: 1;
     img {
-      width: 50px;
-      height: 50px;
-      margin: 8px;
+      width: 14rem;
     }
   }
-  &-Routes {
+  &-Menu {
     display: flex;
-    width: 300px;
-    ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    @media (max-width: 768px) {
       display: flex;
+      flex-direction: column;
       width: 100%;
-      justify-content: space-evenly;
-      list-style: none;
-      padding: 0;
-      align-items: center;
-      li {
-        cursor: pointer;
-        a {
-          text-decoration: none;
-          color: black;
-        }
-        a:hover {
-          color: blue;
-        }
+      position: absolute;
+      top: 6rem;
+      right: -110%;
+      opacity: 1;
+    }
+    @media (min-width: 768px) {
+      gap: 4rem;
+    }
+  }
+  &-Item {
+    line-height: 7rem;
+    background-color: $primary_color;
+    &:hover {
+      background-color: $secondary_color;
+    }
+    @media (min-width: 768px) {
+      background-color: transparent;
+      &:hover {
+        background-color: transparent;
       }
     }
+  }
+  &-Links {
+    color: #000;
+    text-decoration: none;
+    font-family: "Blinker", sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    &:hover {
+      color: #fff;
+    }
+  }
+  &-Icon {
+    display: block;
+    font-size: 3rem;
+    cursor: pointer;
+    @media (min-width: 769px) {
+      display: none;
+    }
+  }
+}
+.active {
+  @media (max-width: 768px) {
+    opacity: 1;
+    right: 0%;
+    transition: all 0.3s ease;
+    z-index: 1;
   }
 }
