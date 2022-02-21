@@ -31,6 +31,7 @@ export const getPokemons = async () => {
   const links = data.map((elements) => elements.url);
   const getPromisePokemon = links.map((link) => axios.get(link));
   const getInformationPokemon = await Promise.all(getPromisePokemon);
+  console.log(getInformationPokemon);
   const pokemonData = getInformationPokemon.map((information) => ({
     name: information.data.name,
     id: information.data.id,
