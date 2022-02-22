@@ -30,7 +30,7 @@ const Card = ({ id, name }) => {
             <Button
               isPokemonExist={isPokemonExist}
               char={{ id: id, name: name }}
-              className="btn btn-primary"
+              styleClass={"Button"}
             />
           </div>
         </div>
@@ -54,7 +54,7 @@ const Card = ({ id, name }) => {
             <Button
               isPokemonExist={isPokemonExist}
               char={{ id: id, name: name }}
-              className="btn btn-primary"
+              styleClass={"Button"}
             />
           </div>
         </div>

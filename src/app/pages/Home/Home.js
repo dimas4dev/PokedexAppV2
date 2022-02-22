@@ -4,11 +4,14 @@ import { obtainPokemons } from "../../redux/actions";
 import Header from "../../components/Header/Header";
 import Card from "../../components/Card/Card";
 import Footer from "../../components/Footer/Footer";
-
+import Button from "../../components/Button/Button";
 export default function Home() {
   const dispatch = useDispatch();
-  const pokemons = useSelector((state) => state.initialPokemons.pokemons[0]);
-  console.log(pokemons);
+  const pokemons = useSelector(
+    (state) => state.initialPokemons.pokemons.pokemonData
+  );
+  const nextP = useSelector((state) => state.initialPokemons.pokemons.nextPage);
+  const prevP = useSelector((state) => state.initialPokemons.pokemons.prevPage);
 
   useEffect(() => {
     dispatch(obtainPokemons());
@@ -25,8 +28,8 @@ export default function Home() {
           ))}
         </div>
         <div className="home-pagination">
-          <button className="home-btn">Previous</button>
-          <button className="home-btn">Next</button>
+          {prevP && <Button textButton="Previous" styleClass={"home-btn"} />}
+          {nextP && <Button textButton="Next" styleClass={"home-btn"} />}
         </div>
       </section>
       <Footer />

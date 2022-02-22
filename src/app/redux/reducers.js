@@ -1,4 +1,4 @@
-import { ADD_POKEMONS, POKE_INIT, REMOVE_POKEMONS } from "./actionsTypes";
+import { ADD_POKEMONS, REMOVE_POKEMONS, OBTAIN_POKEMONS } from "./actionsTypes";
 const initialState = { pokemons: [] };
 
 const addOrRemovePokeFavs = (state = initialState, action) => {
@@ -31,10 +31,10 @@ const addOrRemovePokeFavs = (state = initialState, action) => {
 
 const initialPokemons = (state = initialState, action) => {
   switch (action.type) {
-    case POKE_INIT:
+    case OBTAIN_POKEMONS:
       return {
         ...state,
-        pokemons: [action.payload],
+        pokemons: action.payload,
       };
     default:
       return state;
