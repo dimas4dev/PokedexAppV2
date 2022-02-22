@@ -34,7 +34,7 @@ const initialPokemons = (state = initialState, action) => {
     case POKE_INIT:
       return {
         ...state,
-        pokemons: [action.payload],
+        pokemons: action.payload,
       };
     default:
       return state;
