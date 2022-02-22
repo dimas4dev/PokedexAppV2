@@ -10,27 +10,19 @@ const Header = () => {
     <header className="Header">
       <div className="Header-Container">
         <div className="Header-Logo">
-          <Link exact to="/">
+          <Link to="/">
             <img src={PLogo} alt="Logo Pokemon" />
           </Link>
         </div>
         <ul className={click ? "Header-Menu active" : "Header-Menu"}>
           <li className="Header-Item">
-            <NavLink
-              exact
-              to={"/"}
-              activeClassName="active"
-              className="Header-Links"
-              onClick={handleClick}
-            >
+            <NavLink to={"/"} className="Header-Links" onClick={handleClick}>
               Home
             </NavLink>
           </li>
           <li className="Header-Item">
             <NavLink
-              exact
               to={"/store"}
-              activeClassName="active"
               className="Header-Links"
               onClick={handleClick}
             >
