@@ -4,6 +4,7 @@ import Button from "../Button/Button";
 import _ from "lodash";
 import { connect } from "react-redux";
 import { addPokemons, removePokemons } from "../../redux/actions";
+import cardFormater from "../../utils/formaters/cardFormater";
 
 // Card.propTypes = { id: PropTypes.number, name: PropTypes.string };
 
@@ -17,7 +18,7 @@ const Card = ({ id, name, pokemons, addPokemons, removePokemons }) => {
   const isSome = pokemons.some((pokemon) => pokemon.id === id);
 
   return (
-    <article className="card">
+    <article className={`card ${cardFormater()}`}>
       <div className="card-image">
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}

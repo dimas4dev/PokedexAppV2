@@ -41,9 +41,9 @@
   }
   &-Item {
     line-height: 7rem;
-    background-color: $primary_color;
+    background-color: $tertiary_color;
     &:hover {
-      background-color: $secondary_color;
+      background-color: $hover_color;
     }
     @media (min-width: 768px) {
       background-color: transparent;

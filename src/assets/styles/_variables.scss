@@ -1,14 +1,50 @@
 //Global color variables
-$primary_color: #FFD745;
-$secondary_color: #BFA134;
+$primary_color: #ffd745;
+$secondary_color: #bfa134;
+$tertiary_color: #e6c13e;
 $font_color: black;
 $background: white;
-$hover_color: #BFA134;
+$hover_color: #bfa134;
 $hover_font_color: #000000;
 
 //Card color variables
-$card_bug_type: green;
-$card_poison_type: violet;
-$card_normal_type: gray;
-$card_default_type: blue;
-
+$color_bug: rgb(64, 180, 64);
+$color_dark: #4b4453;
+$color_dragon: linear-gradient(
+  to bottom,
+  #4880d4,
+  #707ed9,
+  #927bda,
+  #b276d7,
+  #cf71cf
+);
+$color_electric: #f9f871;
+$color_fairy: #faccff;
+$color_fighting: rgb(177, 83, 39);
+$color_fire: orange;
+$color_flying: linear-gradient(
+  to bottom,
+  #3f78ce,
+  #7d67a8,
+  #895e83,
+  #7f5c68,
+  #685d5d
+);
+$color_ghost: #845ec2;
+$color_grass: rgb(70, 156, 70);
+$color_ground: linear-gradient(
+  to bottom,
+  #a6bb29,
+  #a29412,
+  #96700a,
+  #814f0d,
+  #67310e
+);
+$color_ice: rgb(45, 159, 194);
+$color_normal: gray;
+$color_poison: rgb(155, 71, 155);
+$color_psychic: violet;
+$color_rock: rgb(122, 122, 56);
+$color_steel: rgb(122, 122, 167);
+$color_water: rgb(93, 93, 189);
+$color_default: rgb(122, 196, 180);
