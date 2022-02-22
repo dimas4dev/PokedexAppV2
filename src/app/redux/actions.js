@@ -1,16 +1,16 @@
-import { ADD_POKEMONS, REMOVE_POKEMONS, POKE_INIT } from "./actionsTypes";
+import { ADD_POKEMONS, REMOVE_POKEMONS, OBTAIN_POKEMONS } from "./actionsTypes";
 import { getPokemons } from "../services/getPokemons";
 
-const obtainPokemons = () => {
+const obtainPokemons = (url) => {
   return async (dispatch) => {
-    const pokemons = await getPokemons();
+    const pokemons = await getPokemons(url);
     dispatch(initPokemons(pokemons));
   };
 };
 
 const initPokemons = (payload) => {
   return {
-    type: POKE_INIT,
+    type: OBTAIN_POKEMONS,
     payload: payload,
   };
 };

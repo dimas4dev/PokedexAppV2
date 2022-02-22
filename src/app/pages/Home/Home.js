@@ -7,8 +7,11 @@ import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const pokemons = useSelector((state) => state.initialPokemons.pokemons[0]);
-  console.log(pokemons);
+  const pokemons = useSelector(
+    (state) => state.initialPokemons.pokemons.pokemonData
+  );
+  const nextP = useSelector((state) => state.initialPokemons.pokemons.nextPage);
+  const prevP = useSelector((state) => state.initialPokemons.pokemons.prevPage);
 
   useEffect(() => {
     dispatch(obtainPokemons());
@@ -25,8 +28,22 @@ export default function Home() {
           ))}
         </div>
         <div className="home-pagination">
-          <button className="home-btn">Previous</button>
-          <button className="home-btn">Next</button>
+          <button
+            onClick={() => {
+              dispatch(obtainPokemons(prevP));
+            }}
+            className="home-btn"
+          >
+            Previous
+          </button>
+          <button
+            onClick={() => {
+              dispatch(obtainPokemons(nextP));
+            }}
+            className="home-btn"
+          >
+            Next
+          </button>
         </div>
       </section>
       <Footer />
