@@ -1,6 +1,6 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-
+import thunk from "redux-thunk";
 import { addOrRemovePokeFavs, initialPokemons } from "./reducers";
 
 const reducers = combineReducers({
@@ -8,6 +8,9 @@ const reducers = combineReducers({
   initialPokemons,
 });
 
-const store = createStore(reducers, composeWithDevTools());
+const store = createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 export { store };

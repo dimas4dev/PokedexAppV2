@@ -1,34 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { obtainPokemons } from "../../redux/actions";
 import Header from "../../components/Header/Header";
 import Card from "../../components/Card/Card";
 import Footer from "../../components/Footer/Footer";
 
-import { getPokemons } from "../../services/getPokemons";
-
 export default function Home() {
-  const [pokemons, setPokemons] = useState([]);
-
-  const callPokemons = async () => {
-    const pokemonData = await getPokemons();
-    setPokemons(pokemonData);
-  };
+  const dispatch = useDispatch();
+  const pokemons = useSelector((state) => state.initialPokemons.pokemons[0]);
+  console.log(pokemons);
 
   useEffect(() => {
-    callPokemons();
-  }, []);
+    dispatch(obtainPokemons());
+  }, [dispatch]);
 
   return (
     <>
       <Header />
-      <section className="container">
-        {pokemons.map(
-          (
-            pokeCard,
-            index //Comentario bonito
-          ) => (
+      <section className="home">
+        <h1 className="home-heading">Pick your Pokemon</h1>
+        <div className="home-container">
+          {pokemons?.map((pokeCard, index) => (
             <Card {...pokeCard} key={index} />
-          )
-        )}
+          ))}
+        </div>
+        <div className="home-pagination">
+          <button className="home-btn">Previous</button>
+          <button className="home-btn">Next</button>
+        </div>
       </section>
       <Footer />
     </>
