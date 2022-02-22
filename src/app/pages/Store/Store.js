@@ -20,10 +20,17 @@ export default function Home() {
   return (
     <>
       <Header />
-      <section className="container">
-        {pokeFavs.map((pokemon, index) => (
-          <Card {...pokemon} key={index} />
-        ))}
+      <section className="store">
+        <h1 className="store-heading">Cart</h1>
+        <div className="home-container">
+          {pokeFavs.map((pokemon, index) => (
+            <Card {...pokemon} key={index} />
+          ))}
+        </div>
+        <div className="store-pagination">
+          <button className="store-btn">Previous</button>
+          <button className="store-btn">Next</button>
+        </div>
       </section>
       <Footer />
     </>
