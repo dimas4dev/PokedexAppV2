@@ -32,8 +32,8 @@
       width: 100%;
       position: absolute;
       top: 6rem;
-      right: -110%;
-      opacity: 1;
+      // right: -110%;
+      opacity: 0;
     }
     @media (min-width: 768px) {
       gap: 4rem;
@@ -46,6 +46,7 @@
       background-color: #bfa134;
     }
     @media (min-width: 768px) {
+      line-height: unset;
       background-color: transparent;
       &:hover {
         background-color: transparent;
