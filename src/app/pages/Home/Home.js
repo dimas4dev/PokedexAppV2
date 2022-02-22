@@ -4,7 +4,7 @@ import { obtainPokemons } from "../../redux/actions";
 import Header from "../../components/Header/Header";
 import Card from "../../components/Card/Card";
 import Footer from "../../components/Footer/Footer";
-
+import Button from "../../components/Button/Button";
 export default function Home() {
   const dispatch = useDispatch();
   const pokemons = useSelector(
@@ -28,26 +28,8 @@ export default function Home() {
           ))}
         </div>
         <div className="home-pagination">
-          {prevP && (
-            <button
-              onClick={() => {
-                dispatch(obtainPokemons(prevP));
-              }}
-              className="home-btn"
-            >
-              Previous
-            </button>
-          )}
-          {nextP && (
-            <button
-              onClick={() => {
-                dispatch(obtainPokemons(nextP));
-              }}
-              className="home-btn"
-            >
-              Next
-            </button>
-          )}
+          {prevP && <Button textButton="Previous" styleClass={"home-btn"} />}
+          {nextP && <Button textButton="Next" styleClass={"home-btn"} />}
         </div>
       </section>
       <Footer />
