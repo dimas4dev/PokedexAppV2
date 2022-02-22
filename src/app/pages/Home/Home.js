@@ -28,22 +28,26 @@ export default function Home() {
           ))}
         </div>
         <div className="home-pagination">
-          <button
-            onClick={() => {
-              dispatch(obtainPokemons(prevP));
-            }}
-            className="home-btn"
-          >
-            Previous
-          </button>
-          <button
-            onClick={() => {
-              dispatch(obtainPokemons(nextP));
-            }}
-            className="home-btn"
-          >
-            Next
-          </button>
+          {prevP && (
+            <button
+              onClick={() => {
+                dispatch(obtainPokemons(prevP));
+              }}
+              className="home-btn"
+            >
+              Previous
+            </button>
+          )}
+          {nextP && (
+            <button
+              onClick={() => {
+                dispatch(obtainPokemons(nextP));
+              }}
+              className="home-btn"
+            >
+              Next
+            </button>
+          )}
         </div>
       </section>
       <Footer />
