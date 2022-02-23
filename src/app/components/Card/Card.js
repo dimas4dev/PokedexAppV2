@@ -1,18 +1,17 @@
 import React from "react";
 import Button from "../Button/Button";
-// import PropTypes from "prop-types";
 import cardFormater from "../../utils/formaters/cardFormater";
 import { useSelector } from "react-redux";
-// Card.propTypes = { id: PropTypes.number, name: PropTypes.string };
 
 const Card = ({ id, name, types }) => {
   const pokemonsReduxState = useSelector(
     (state) => state.addOrRemovePokeFavs.pokemons
   );
-
   const isPokemonExist = pokemonsReduxState.some(
     (pokemon) => pokemon.id === id
   );
+  const count = pokemonsReduxState.some((pokemon) => pokemon.cantPoke > 1);
+  console.log(count);
 
   const typePokemon = types[0].type.name;
 
@@ -28,11 +27,6 @@ const Card = ({ id, name, types }) => {
           </div>
           <div className="card-body">
             <p className="card-name">{`${id}. ${name}`} </p>
-            <Button
-              isPokemonExist={isPokemonExist}
-              char={{ id: id, name: name }}
-              styleClass={"Button"}
-            />
           </div>
         </div>
         <div className="card-back">
@@ -54,14 +48,20 @@ const Card = ({ id, name, types }) => {
             </div>
             <Button
               isPokemonExist={isPokemonExist}
-              char={{ id: id, name: name }}
+              text="Add"
+              count={count}
+              char={{ id: id, name: name, cantPoke: 1 }}
               styleClass={"Button"}
             />
-            <Button
-              isPokemonExist={isPokemonExist}
-              char={{ id: id, name: name }}
-              styleClass={"Button"}
-            />
+            {isPokemonExist ? (
+              <Button
+                isPokemonExist={isPokemonExist}
+                text="Remove"
+                count={count}
+                char={{ id: id, name: name }}
+                styleClass={"Button"}
+              />
+            ) : null}
           </div>
         </div>
       </div>
