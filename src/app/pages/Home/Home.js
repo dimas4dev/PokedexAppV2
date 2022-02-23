@@ -15,6 +15,10 @@ export default function Home() {
   const nextP = useSelector((state) => state.initialPokemons.pokemons.nextPage);
   const prevP = useSelector((state) => state.initialPokemons.pokemons.prevPage);
 
+  const storagePokemons = useSelector(
+    (state) => state.addOrRemovePokeFavs.pokemons
+  );
+
   useEffect(() => {
     dispatch(obtainPokemons());
   }, [dispatch]);
@@ -25,9 +29,18 @@ export default function Home() {
       <section className="home">
         <h1 className="home-heading">Pick your Pokemon</h1>
         <div className="home-container">
-          {pokemons?.map((pokeCard, index) => (
-            <Card {...pokeCard} key={index} />
-          ))}
+          {pokemons?.map((pokeCard, index) => {
+            let cantPoke = 0;
+            const filterPokes = storagePokemons.filter((pokemon) => {
+              if (pokeCard.id === pokemon.id) {
+                cantPoke = pokemon.cantPoke;
+              }
+
+              return cantPoke;
+            });
+
+            return <Card {...pokeCard} key={index} cantPoke={cantPoke} />;
+          })}
         </div>
         <div className="home-pagination">
           {prevP && <Button textButton="Previous" styleClass={"home-btn"} />}
