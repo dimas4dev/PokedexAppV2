@@ -5,7 +5,7 @@ import cardFormater from "../../utils/formaters/cardFormater";
 import { useSelector } from "react-redux";
 // Card.propTypes = { id: PropTypes.number, name: PropTypes.string };
 
-const Card = ({ id, name, types }) => {
+const Card = ({ id, name, types, height }) => {
   const pokemonsReduxState = useSelector(
     (state) => state.addOrRemovePokeFavs.pokemons
   );
@@ -16,6 +16,7 @@ const Card = ({ id, name, types }) => {
 
   const typePokemon = types[0].type.name;
 
+  const heightPokemonMeters = height / 10;
   return (
     <div className="container">
       <div className={`card ${cardFormater(typePokemon)}`}>
@@ -40,7 +41,7 @@ const Card = ({ id, name, types }) => {
             <p className="back-name">{`${id}. ${name}`} </p>
             <div className="back-info">
               <p className="back-text">
-                <span>Height:</span> 2'04''
+                <span>Height:</span> {heightPokemonMeters} m
               </p>
               <p className="back-text">
                 <span>Weight:</span> 15.2lbs
