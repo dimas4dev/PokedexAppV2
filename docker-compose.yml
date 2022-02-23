@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  pokedex:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - pokedex_frontend_net
+    environment:
+      - CI=true
+      - CHOKIDAR_USEPOLLING=true
+
+networks:
+  pokedex_frontend_net:

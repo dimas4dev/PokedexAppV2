@@ -2,7 +2,6 @@ import axios from "axios";
 import { URL } from "../../constants";
 
 export const getPokemons = async (initialUrl = URL) => {
-  console.log(initialUrl);
   /**
    * @description
    * Hacer una peticion a la API de pokeapi para obtener todos los pokemons con su informacion realizandolo con Axios
