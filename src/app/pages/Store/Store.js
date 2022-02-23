@@ -11,7 +11,6 @@ export default function Store() {
   );
 
   //id, name, types, height, weight, sprites
-  console.log(pokemons);
 
   return (
     <>
