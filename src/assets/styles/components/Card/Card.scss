@@ -43,8 +43,8 @@
   }
   &:hover {
     border: 0.3rem solid #000;
-    transform: rotateY(180deg);
     box-shadow: 0 0.5rem 0.7rem #808080;
+    transform: rotateY(180deg);
   }
   &-image {
     img {
