@@ -1,5 +1,5 @@
 .Header {
-  background-color: #ffd745;
+  background-color: $primary_color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,9 +40,9 @@
   }
   &-Item {
     line-height: 7rem;
-    background-color: #e6c13e;
+    background-color: $tertiary_color;
     &:hover {
-      background-color: #bfa134;
+      background-color: $hover_color;
     }
     @media (min-width: 769px) {
       background-color: transparent;

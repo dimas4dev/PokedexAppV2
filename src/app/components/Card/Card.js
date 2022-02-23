@@ -1,12 +1,11 @@
 import React from "react";
 import Button from "../Button/Button";
 // import PropTypes from "prop-types";
-import _ from "lodash";
+import cardFormater from "../../utils/formaters/cardFormater";
 import { useSelector } from "react-redux";
-
 // Card.propTypes = { id: PropTypes.number, name: PropTypes.string };
 
-const Card = ({ id, name }) => {
+const Card = ({ id, name, types }) => {
   const pokemonsReduxState = useSelector(
     (state) => state.addOrRemovePokeFavs.pokemons
   );
@@ -15,9 +14,11 @@ const Card = ({ id, name }) => {
     (pokemon) => pokemon.id === id
   );
 
+  const typePokemon = types[0].type.name;
+
   return (
     <div className="container">
-      <div className="card">
+      <div className={`card ${cardFormater(typePokemon)}`}>
         <div className="card-front">
           <div className="card-image">
             <img
