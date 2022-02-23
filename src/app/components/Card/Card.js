@@ -9,7 +9,6 @@ const Card = ({ id, name, types, height, weight, sprites }) => {
   );
 
   const amountPokemon = pokemonsReduxState.map((amount) => amount.cantPoke);
-  console.log(amountPokemon);
 
   const isPokemonExist = pokemonsReduxState.some(
     (pokemon) => pokemon.id === id
