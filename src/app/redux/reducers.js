@@ -5,10 +5,18 @@ const addOrRemovePokeFavs = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POKEMONS: {
       const isExistPokemon = state.pokemons.some(
-        (pokemon) => pokemon.id === action.payload.id
+        (pokemon) => pokemon.id === action.payload.id && pokemon.cantPoke > 0
       );
+
       if (isExistPokemon) {
-        break;
+        return {
+          ...state,
+          pokemons: state.pokemons.map((pokemon) =>
+            pokemon.id === action.payload.id
+              ? { ...pokemon, cantPoke: pokemon.cantPoke + 1 }
+              : pokemon
+          ),
+        };
       }
       return {
         ...state,
@@ -16,6 +24,25 @@ const addOrRemovePokeFavs = (state = initialState, action) => {
       };
     }
     case REMOVE_POKEMONS: {
+      const isExistPokemon = state.pokemons.some(
+        (pokemon) => pokemon.id === action.payload.id && pokemon.cantPoke === 1
+      );
+      const isMoreThanOnePokemon = state.pokemons.some(
+        (pokemon) => pokemon.id === action.payload.id && pokemon.cantPoke > 1
+      );
+      if (isMoreThanOnePokemon) {
+        return {
+          ...state,
+          pokemons: state.pokemons.map((pokemon) =>
+            pokemon.id === action.payload.id
+              ? { ...pokemon, cantPoke: pokemon.cantPoke - 1 }
+              : pokemon
+          ),
+        };
+      }
+
+      if (isExistPokemon) {
+      }
       return {
         ...state,
         pokemons: state.pokemons.filter(
@@ -26,7 +53,6 @@ const addOrRemovePokeFavs = (state = initialState, action) => {
     default:
       return state;
   }
-  return state;
 };
 
 const initialPokemons = (state = initialState, action) => {

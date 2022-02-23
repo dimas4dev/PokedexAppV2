@@ -9,17 +9,14 @@ import {
 } from "../../redux/actions";
 
 function Button(props) {
-  const { isPokemonExist, char, textButton, styleClass } = props;
+  const { char, textButton, styleClass, text } = props;
 
-  const textButtonCard = isPokemonExist ? "Remove" : "Add";
-
+  const dispatch = useDispatch();
   const nextP = useSelector((state) => state.initialPokemons.pokemons.nextPage);
   const prevP = useSelector((state) => state.initialPokemons.pokemons.prevPage);
 
-  const dispatch = useDispatch();
-
   const handleClick = () => {
-    switch (textButton || textButtonCard) {
+    switch (textButton || text) {
       case "Previous":
         dispatch(obtainPokemons(prevP));
         break;
@@ -44,7 +41,7 @@ function Button(props) {
       }}
       className={styleClass}
     >
-      {textButton ? textButton : textButtonCard}
+      {textButton ? textButton : text}
     </button>
   );
 }
