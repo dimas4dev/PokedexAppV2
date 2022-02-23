@@ -20,7 +20,7 @@ const cardFormater = (type) => {
     water: "color_water",
   };
 
-  return pokemonTypesToColor[type] || "default";
+  return pokemonTypesToColor[type] || "color_default";
 };
 
 export default cardFormater;

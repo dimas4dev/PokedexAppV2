@@ -5,11 +5,13 @@ import Header from "../../components/Header/Header";
 import Card from "../../components/Card/Card";
 import Footer from "../../components/Footer/Footer";
 import Button from "../../components/Button/Button";
+
 export default function Home() {
   const dispatch = useDispatch();
   const pokemons = useSelector(
     (state) => state.initialPokemons.pokemons.pokemonData
   );
+
   const nextP = useSelector((state) => state.initialPokemons.pokemons.nextPage);
   const prevP = useSelector((state) => state.initialPokemons.pokemons.prevPage);
 
