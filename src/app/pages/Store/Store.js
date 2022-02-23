@@ -6,7 +6,6 @@ import Empty from "../../components/Empty/Empty";
 
 export default function Store() {
   const pokeFavs = useSelector((state) => state.addOrRemovePokeFavs.pokemons);
-  console.log(pokeFavs.length);
 
   return (
     <>

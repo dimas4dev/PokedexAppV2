@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import cardFormater from "../../utils/formaters/cardFormater";
 import { useSelector } from "react-redux";
 
-const Card = ({ id, name, types, height, weight, sprites }) => {
+const Card = ({ id, name, types, height, weight, sprites, cantPoke }) => {
   const pokemonsReduxState = useSelector(
     (state) => state.addOrRemovePokeFavs.pokemons
   );
@@ -44,6 +44,7 @@ const Card = ({ id, name, types, height, weight, sprites }) => {
               </p>
               <p className="back-text">
                 <span>Amount:</span>
+                {cantPoke}
               </p>
             </div>
             <Button
