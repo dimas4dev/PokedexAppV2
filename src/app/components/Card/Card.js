@@ -53,7 +53,7 @@ const Card = ({ id, name }) => {
             </div>
             <Button
               isPokemonExist={isPokemonExist}
-              char={{ id: id, name: name }}
+              char={{ id: id, name: name, cantPoke: 1 }}
               styleClass={"Button"}
             />
             <Button
