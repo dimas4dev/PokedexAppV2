@@ -3,18 +3,15 @@ import Header from "../../components/Header/Header";
 import Card from "../../components/Card/Card";
 import Footer from "../../components/Footer/Footer";
 
-export default function Home() {
-  // const [pokemons, setPokemons] = useState([]);
-
-  // const callPokemons = async () => {
-  //   const pokemonData = await getPokemons();
-  //   setPokemons(pokemonData);
-  // };
-
-  // useEffect(() => {
-  //   callPokemons();
-  // }, []);
+export default function Store() {
   const pokeFavs = useSelector((state) => state.addOrRemovePokeFavs.pokemons);
+
+  const pokemons = useSelector(
+    (state) => state.initialPokemons.pokemons.pokemonData
+  );
+
+  //id, name, types, height, weight, sprites
+  console.log(pokemons);
 
   return (
     <>

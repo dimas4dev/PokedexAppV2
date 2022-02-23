@@ -14,7 +14,6 @@ const Card = ({ id, name, types, height, weight, sprites }) => {
     (pokemon) => pokemon.id === id
   );
   const count = pokemonsReduxState.some((pokemon) => pokemon.cantPoke > 1);
-  console.log(count);
 
   const typePokemon = types[0].type.name;
 
@@ -56,7 +55,15 @@ const Card = ({ id, name, types, height, weight, sprites }) => {
               isPokemonExist={isPokemonExist}
               text="Add"
               count={count}
-              char={{ id: id, name: name, cantPoke: 1 }}
+              char={{
+                id: id,
+                name: name,
+                types: types,
+                height: height,
+                weight: weight,
+                sprites: sprites,
+                cantPoke: 1,
+              }}
               styleClass={"Button"}
             />
             {isPokemonExist ? (
@@ -64,7 +71,14 @@ const Card = ({ id, name, types, height, weight, sprites }) => {
                 isPokemonExist={isPokemonExist}
                 text="Remove"
                 count={count}
-                char={{ id: id, name: name }}
+                char={{
+                  id: id,
+                  name: name,
+                  types: types,
+                  height: height,
+                  weight: weight,
+                  sprites: sprites,
+                }}
                 styleClass={"Button"}
               />
             ) : null}
