@@ -14,12 +14,10 @@ const Card = ({ id, name, types, height, weight, sprites }) => {
   const count = pokemonsReduxState.some((pokemon) => pokemon.cantPoke > 1);
 
   const typePokemon = types[0].type.name;
-
   const pokemonImage = sprites.front_default;
-
   const pokemonWeight = weight / 10;
-
   const heightPokemonMeters = height / 10;
+
   return (
     <div className="container">
       <div className={`card ${cardFormater(typePokemon)}`}>
