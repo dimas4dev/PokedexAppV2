@@ -57,6 +57,11 @@ const Card = ({ id, name, types }) => {
               char={{ id: id, name: name }}
               styleClass={"Button"}
             />
+            <Button
+              isPokemonExist={isPokemonExist}
+              char={{ id: id, name: name }}
+              styleClass={"Button"}
+            />
           </div>
         </div>
       </div>
