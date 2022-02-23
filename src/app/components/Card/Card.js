@@ -8,8 +8,6 @@ const Card = ({ id, name, types, height, weight, sprites }) => {
     (state) => state.addOrRemovePokeFavs.pokemons
   );
 
-  const amountPokemon = pokemonsReduxState.map((amount) => amount.cantPoke);
-
   const isPokemonExist = pokemonsReduxState.some(
     (pokemon) => pokemon.id === id
   );
@@ -47,8 +45,7 @@ const Card = ({ id, name, types, height, weight, sprites }) => {
                 <span>Type:</span> {typePokemon}
               </p>
               <p className="back-text">
-                <span>Amount:</span>{" "}
-                {amountPokemon.length === 0 ? 0 : amountPokemon[0]}
+                <span>Amount:</span>
               </p>
             </div>
             <Button
