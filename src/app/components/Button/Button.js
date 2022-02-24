@@ -8,9 +8,7 @@ import {
   removePokemons,
 } from "../../redux/actions";
 
-function Button(props) {
-  const { char, textButton, styleClass, text } = props;
-
+function Button({ char, textButton, styleClass, text }) {
   const dispatch = useDispatch();
   const nextP = useSelector((state) => state.initialPokemons.pokemons.nextPage);
   const prevP = useSelector((state) => state.initialPokemons.pokemons.prevPage);
@@ -49,5 +47,8 @@ function Button(props) {
 export default Button;
 
 Button.propTypes = {
-  textButton: PropTypes.string,
+  textButton: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  char: PropTypes.object.isRequired,
+  styleClass: PropTypes.string,
 };
