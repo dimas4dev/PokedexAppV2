@@ -1,6 +1,7 @@
 import { ADD_POKEMONS, REMOVE_POKEMONS, OBTAIN_POKEMONS } from "./actionsTypes";
 import { getPokemons } from "../services/getPokemons";
 
+/* istanbul ignore next */
 const obtainPokemons = (url) => {
   return async (dispatch) => {
     const pokemons = await getPokemons(url);

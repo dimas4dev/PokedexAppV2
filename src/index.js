@@ -1,8 +1,8 @@
+/* istanbul ignore file */
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./app/App";
-// import AppRoutes from "./app/AppRoutes";
 import { store } from "./app/redux/store";
 import { Provider } from "react-redux";
 ReactDOM.render(
