@@ -18,6 +18,7 @@ export default function Home() {
   const storagePokemons = useSelector(
     (state) => state.addOrRemovePokeFavs.pokemons
   );
+  console.log(storagePokemons);
 
   useEffect(() => {
     dispatch(obtainPokemons());
@@ -30,15 +31,9 @@ export default function Home() {
         <h1 className="home-heading">Pick your Pokemon</h1>
         <div className="home-container">
           {pokemons?.map((pokeCard, index) => {
-            let cantPoke = 0;
-            const filterPokes = storagePokemons.filter((pokemon) => {
-              if (pokeCard.id === pokemon.id) {
-                cantPoke = pokemon.cantPoke;
-              }
-
-              return cantPoke;
-            });
-
+            const cantPoke =
+              storagePokemons.find((pokemon) => pokemon.id === pokeCard.id)
+                ?.cantPoke || 0;
             return <Card {...pokeCard} key={index} cantPoke={cantPoke} />;
           })}
         </div>
