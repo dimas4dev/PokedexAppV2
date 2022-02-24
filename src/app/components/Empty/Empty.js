@@ -5,7 +5,7 @@ import ErrorImg from "../../../assets/images/Error.png";
 export default function Empty() {
   return (
     <>
-      <div className="empty">
+      <div className="empty" data-test="Empty">
         <div className="empty-container">
           <img className="empty-image" src={ErrorImg} alt="error Pokemon" />
           <div className="empty-info">

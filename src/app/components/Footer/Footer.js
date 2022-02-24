@@ -21,7 +21,7 @@ const Footer = () => {
   const nameMonth = month[date.getMonth()];
   return (
     <>
-      <footer className="footer">
+      <footer className="footer" data-test="footer">
         <img className="footer-img" src={PokemonsLogo} alt="logo" />
         <p className="footer-paragraph--description">
           The pokedex at your fingertips

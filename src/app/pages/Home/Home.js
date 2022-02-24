@@ -18,7 +18,6 @@ export default function Home() {
   const storagePokemons = useSelector(
     (state) => state.addOrRemovePokeFavs.pokemons
   );
-  console.log(storagePokemons);
 
   useEffect(() => {
     dispatch(obtainPokemons());

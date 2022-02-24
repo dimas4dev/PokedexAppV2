@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import cardFormater from "../../utils/formaters/cardFormater";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 
 const Card = ({ id, name, types, height, weight, sprites, cantPoke }) => {
@@ -85,4 +86,16 @@ const Card = ({ id, name, types, height, weight, sprites, cantPoke }) => {
   );
 };
 
+// { id, name, types, height, weight, sprites, cantPoke }
+
 export default Card;
+
+Card.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  types: PropTypes.array,
+  height: PropTypes.number,
+  weight: PropTypes.number,
+  sprites: PropTypes.object,
+  cantPoke: PropTypes.number,
+};
