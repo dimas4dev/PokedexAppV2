@@ -43,7 +43,7 @@ const Card = ({ id, name, types, height, weight, sprites, cantPoke }) => {
                 <span>Type:</span> {typePokemon}
               </p>
               <p className="back-text">
-                <span>Amount:</span>
+                <span>Amount: </span>
                 {cantPoke}
               </p>
             </div>
