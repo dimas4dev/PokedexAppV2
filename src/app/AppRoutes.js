@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./pages/Home/Home";
 import Store from "./pages/Store/Store";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 export default function AppRoutes() {
   return (
