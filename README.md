@@ -10,7 +10,7 @@ Within the application there is a functionality that makes adding a favorite pok
 
 ## Demo
 
-Here you will find a demo from project[Pokedex APP](https://github.com/dimasmendoza/PokedexAppV2)
+Here you will find a demo from project[Pokedex APP](https://pokedex-app-v2.vercel.app/)
 
 ## Installation
 
